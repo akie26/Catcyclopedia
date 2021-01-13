@@ -1,0 +1,32 @@
+$navigation-link-font: "Marck Script";
+$navigation-link-fontSize: 30px;
+
+$container-dark-color: rgb(142, 142, 147);
+$container-light-color: rgba(242, 242, 247, 0.2);
+
+$category-font: "Avenir, Helvetica, Arial, sans-serif";
+
+$category-light-one: rgb(0, 122, 255);
+$category-light-two: rgb(52, 199, 89);
+$category-light-three: rgb(88, 86, 214);
+$category-light-four: rgb(255, 149, 0);
+$category-light-five: rgb(255, 45, 85);
+$category-light-six: rgb(175, 82, 222);
+$category-light-seven: rgb(255, 59, 48);
+$category-light-eight: rgb(90, 200, 250);
+$category-light-nine: rgb(255, 204, 0);
+
+$category-dark-one: rgb(10, 132, 255);
+$category-dark-two: rgb(48, 209, 88);
+$category-dark-three: rgb(94, 92, 230);
+$category-dark-four: rgb(255, 159, 10);
+$category-dark-five: rgb(255, 55, 95);
+$category-dark-six: rgb(191, 90, 242);
+$category-dark-seven: rgb(255, 69, 58);
+$category-dark-eight: rgb(100, 210, 255);
+$category-dark-nine: rgb(255, 214, 10);
+
+@font-face {
+  font-family: "Marck Script";
+  src: url("../fonts/MarckScript.ttf");
+}

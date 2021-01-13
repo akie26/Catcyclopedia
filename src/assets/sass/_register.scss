@@ -1,0 +1,97 @@
+.main {
+  font-family: "monospace";
+  background-color: #ffffff;
+  width: 400px;
+  height: 450px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.14);
+}
+.sign {
+  padding-top: 40px;
+  color: $category-dark-one;
+  font-family: $navigation-link-font;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.input {
+  font-family: $navigation-link-font;
+
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 27px;
+}
+
+.form1 {
+  height: 200px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  span {
+    font-size: 12px;
+    font-family: monospace;
+    margin-top: -20px;
+    color: $category-dark-seven;
+    text-transform: capitalize;
+  }
+}
+
+.submit {
+  width: 130px;
+  cursor: pointer;
+  border-radius: 5em;
+  color: #000000;
+  font-family: monospace;
+  opacity: 0.8;
+  background: linear-gradient(
+    to right,
+    $category-light-one,
+    $category-dark-one
+  );
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.submit:hover {
+  color: #000000;
+  background: $container-light-color;
+  border: 1px solid #333;
+}
+
+.forgot {
+  color: $category-light-seven;
+  padding-top: 0px;
+  button {
+    margin: 20px 0;
+    text-transform: uppercase;
+    color: $category-dark-one;
+    font-family: monospace;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+  }
+  button:hover {
+    color: $category-dark-two;
+  }
+}

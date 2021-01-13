@@ -1,0 +1,37 @@
+.nav--wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: auto;
+
+  .logo-section {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .link--active {
+    color: $category-light-one;
+    border-bottom: 3px solid $category-light-one;
+  }
+
+  ul {
+    display: flex;
+    float: left;
+    justify-content: space-around;
+
+    li {
+      list-style-type: none;
+      font-family: $navigation-link-font;
+      font-size: $navigation-link-fontSize;
+      a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.9);
+        transition: 0.5s all ease-in-out;
+      }
+      a:hover {
+        color: $category-light-one;
+        border-bottom: 3px solid $category-light-one;
+      }
+    }
+  }
+}
