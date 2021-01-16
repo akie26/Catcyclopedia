@@ -4,13 +4,27 @@ export const addBookmarks = (cat) => {
     const authorId = getState().firebase.auth.uid;
     firestore
       .collection("bookmarks")
-      .add({
+      .doc(`${cat.id}${authorId}`)
+      .set({
         ...cat,
         authorId: authorId,
         date: new Date(),
       })
       .then(() => {
         dispatch({ type: "BOOKMARK_ADDED" }, cat);
+      });
+  };
+};
+
+export const removeBookmark = (id) => {
+  return (dispatch, getState, { getFirebase }) => {
+    const firestore = getFirebase().firestore();
+    firestore
+      .collection("bookmarks")
+      .doc(id)
+      .delete()
+      .then(() => {
+        dispatch({ type: "BOOKMARK_REMOVED" });
       });
   };
 };

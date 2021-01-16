@@ -1,21 +1,22 @@
 import React from "react";
 import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
 import { FaHeart } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { InfoStats, ProgressBars } from "../components/InfoStats";
 import { Image } from "../components/Catalouge";
 import FullScreenSpinner from "./fullPageSpinner";
+import { removeBookmark } from "../redux/actions/bookmark";
+import { toast } from "react-toastify";
 
 const BookMarkSection = ({ uid }) => {
-  const removeFromBookMarks = () => {
-    console.log("daa");
-  };
   useFirestoreConnect([
     { collection: "bookmarks", where: ["authorId", "==", uid] },
   ]);
-
   const bookmarks = useSelector((state) => state.firestore.ordered.bookmarks);
-  console.log(bookmarks);
+  const dispatch = useDispatch();
+  const removeFromBookMarks = (id) => {
+    dispatch(removeBookmark(`${id.id}${id.authorId}`));
+  };
   if (!isLoaded(bookmarks)) {
     return <FullScreenSpinner />;
   }
@@ -29,7 +30,7 @@ const BookMarkSection = ({ uid }) => {
             <div className="info--image">
               <Image cat={cat.image} name={cat.name} />
               <button onClick={() => removeFromBookMarks(cat)}>
-                <FaHeart className="icon" size={50} />
+                <FaHeart className="icon" color="red" size={50} />
               </button>
             </div>
             <div className="info--stats">

@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch, connect } from "react-redux";
@@ -31,7 +31,7 @@ function Gallery(props) {
       <section key={ind} className="gallery">
         {image.map((cat, ind) => (
           <LazyLoadImage
-            className="overlay image"
+            className="image"
             key={ind}
             alt=""
             effect="blur"

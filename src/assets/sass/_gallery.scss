@@ -2,17 +2,16 @@
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(200px, 1fr);
   gap: 20px;
+}
+.gallery:nth-child(1) {
+  grid-column: span 2;
+}
 
-  .gallery:nth-child(3) {
-    grid-column: span 3;
-    grid-row: span 2;
-  }
-
-  img {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

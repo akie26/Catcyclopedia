@@ -1,4 +1,5 @@
 .breeds {
+  display: grid;
   margin: 20px 0;
   .empty-array {
     font-family: monospace;
@@ -12,13 +13,9 @@
 
   .breed-info-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, minmax(550px, 1fr));
-    grid-auto-rows: minmax(50, auto);
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     margin-bottom: 30px;
     gap: 20px;
-    grid-template-areas:
-      "info--image info--stats"
-      "info--image info--stats";
 
     .info--image {
       grid-area: info--image;
@@ -73,9 +70,10 @@
       }
 
       .progess--bars {
+        width: 90%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         .progress--child {
           p {
             margin: 0;
@@ -165,5 +163,40 @@
       font-size: 30px;
       font-family: $navigation-link-font;
     }
+  }
+}
+
+// @media (max-width: 900px) {
+//   .breed-info-wrapper {
+//     display: none;
+//     grid-template-columns: repeat(auto-fill, 1fr);
+//     grid-auto-rows: minmax(50, auto);
+//     margin-bottom: 30px;
+//     gap: 20px;
+//     grid-template-areas:
+//       "info--image info--stats"
+//       "info--image info--stats";
+//   }
+// }
+
+@media (max-width: 830px) {
+  .breed-info-wrapper {
+    display: none;
+    margin-bottom: 30px;
+    gap: 20px;
+    grid-template-areas:
+      "info--image info--image"
+      "info--stats info--stats";
+  }
+}
+
+@media (min-width: 830px) {
+  .breed-info-wrapper {
+    display: none;
+    margin-bottom: 30px;
+    gap: 20px;
+    grid-template-areas:
+      "info--image info--stats"
+      "info--image info--stats";
   }
 }
