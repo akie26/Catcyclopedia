@@ -5,7 +5,7 @@ import { InfoStats, ProgressBars } from "../components/InfoStats";
 import { Image } from "../components/Catalouge";
 import FullScreenSpinner from "../components/fullPageSpinner";
 import { useDispatch, connect } from "react-redux";
-import { useFirestoreConnect, isLoaded } from "react-redux-firebase";
+import { useHistory } from "react-router-dom";
 import { getCats } from "../redux/actions";
 import { addBookmarks } from "../redux/actions/bookmark";
 import IosArrowBack from "react-ionicons/lib/IosArrowBack";
@@ -14,11 +14,18 @@ import IosArrowForward from "react-ionicons/lib/IosArrowForward";
 function Breeds(props) {
   const isLoaded = props.loading;
   const catFacts = props.cats;
+  const history = useHistory();
+  console.log(props.uid);
   const [page, setPage] = useState(0);
   const dispatch = useDispatch();
 
   const addToBookmarks = (cat) => {
-    dispatch(addBookmarks(cat));
+    if (props.uid === undefined) {
+      console.log("yes");
+      history.push("/register");
+    } else {
+      dispatch(addBookmarks(cat));
+    }
   };
 
   const prevPage = () => {
